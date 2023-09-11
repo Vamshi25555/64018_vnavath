@@ -1,0 +1,199 @@
+---
+title: "QMM Assignment 1"
+output:
+  html_document: default
+  pdf_document: default
+date: "2023-09-11"
+---
+
+1) Back Savers is a company that produces backpacks primarily for students. They are
+considering offering some combination of two different models—the Collegiate and the
+Mini. Both are made out of the same rip-resistant nylon fabric. Back Savers has a long-
+term contract with a supplier of the nylon and receives a 5000 square-foot shipment of
+the material each week. Each Collegiate requires 3 square feet while each Mini requires 2
+square feet. The sales forecasts indicate that at most 1000 Collegiates and 1200 Minis can
+be sold per week. Each Collegiate requires 45 minutes of labor to produce and generates
+a unit profit of $32. Each Mini requires 40 minutes of labor and generates a unit profit of
+$24. Back Savers has 35 laborers that each provides 40 hours of labor per week.
+Management wishes to know what quantity of each type of backpack to produce per
+week.
+a. Clearly define the decision variables
+b. What is the objective function?
+c. What are the constraints?
+d. Write down the full mathematical formulation for this LP problem
+
+
+
+```{r}
+```
+
+
+Solution:
+
+For the above problem, here is the following solution in linear programming:
+  
+a. #Defining the Decision variables:
+  
+let,
+the number of Collegiate backpacks be x
+the number of Mini backpacks be y
+
+b. #Objective function:
+  
+The main goal of the business is to maximise the profit which is (Z), for which the total objective function has to be:
+
+x multiplied with 32$ since the cost of one collegiate backpack is 32$ = 32x
+
+y multiplied with 24$ since the cost of one mini backpack is 24$ = 24y
+
+Then the profit will be Z = 32x + 24y
+
+c. #Constraints
+
+i.Material constraints:
+  
+Since Backsavers receives a nylon fabric of 5000Sq.ft only per week, the fiber constraint is going to be 5000sq.ft.
+
+Each collegiate backpack and mini backpack require 3 and 2 sq.ft of nylon required respectively.
+
+Therefore, Material constraint will be 3x+2y≤5000 sq.ft.
+
+ii. Sales constraint:
+  
+Company can only produce 1000 collegiate backpacks and 1200 mini backpacks per week.
+
+Therefore, x≤1000 and y≤1200
+
+iii. Labor constraint:
+
+The number of labor currently working in the company is 35 for 40 hours per week. 
+Since, 
+each collegiate backpack takes 45 minutes = 45x/60 = 0.75x
+each mini backpack takes 40 minutes = 40y/60 = 0.67y
+
+Therefore, 0.75x+0.67y≤35X40
+
+iv. Non-negativity constraint:
+  
+Since the number of backpacks cannot be a negative number,
+x≥0
+y≥0
+
+d. LP mathematical formula:
+  
+Putting all the constraints together for the solution:
+  
+Z = 32x + 24y
+Material Constraint: 3x+2y≤5000
+Sales Constraint: x≤1000 for collegiate and y≤1200 Mini backpacks
+Labor Constraint: 0.75x+0.67y≤35X40
+Non-negative constraint: x≥0 and y≥0 for both Collegiate and mini backpack.
+
+
+
+2) The Weigelt Corporation has three branch plants with excess production capacity.
+Fortunately, the corporation has a new product ready to begin production, and all three
+plants have this capability, so some of the excess capacity can be used in this way. This
+product can be made in three sizes--large, medium, and small--that yield a net unit profit
+of $420, $360, and $300, respectively. Plants 1, 2, and 3 have the excess capacity to
+produce 750, 900, and 450 units per day of this product, respectively, regardless of the
+size or combination of sizes involved.
+The amount of available in-process storage space also imposes a limitation on the
+production rates of the new product. Plants 1, 2, and 3 have 13,000, 12,000, and 5,000
+square feet, respectively, of in-process storage space available for a day's production of
+this product. Each unit of the large, medium, and small sizes produced per day requires
+20, 15, and 12 square feet, respectively.
+Sales forecasts indicate that if available, 900, 1,200, and 750 units of the large,
+medium, and small sizes, respectively, would be sold per day.
+At each plant, some employees will need to be laid off unless most of the plant’s
+excess production capacity can be used to produce the new product. To avoid layoffs if
+possible, management has decided that the plants should use the same percentage of their
+excess capacity to produce the new product.
+Management wishes to know how much of each of the sizes should be produced
+by each of the plants to maximize profit.
+a. Define the decision variables
+b. Formulate a linear programming model for this problem.
+
+Solution:
+
+For the above problem, here is the following solution in linear programming:
+  
+a. #Defining the Decision variables:
+  
+let,
+the number of large-sized units be x,
+the number of Medium-sized units be y &
+the number of small-sized units be z.
+
+b. Formulating a linear programming model:
+
+Since the objective is to maximize the profit (lets say Z) which will be the sum of all the sizes multiplied with their respective profits:
+
+Here are the profits for each size:
+Large = 420x
+Medium = 360y
+Small = 300z
+
+Looking at the constraints to the solution:
+
+1) Production capacity constraint:
+
+Regardless the size and combination, 3 plants has 3 different capacities for daily production which is:
+
+Plant 1 can produce 750 products combined = x+y+z ≤ 750
+Plant 2 can produce 900 products combined = x+y+z ≤ 900
+Plant 3 can produce 450 products combined = x+y+z ≤ 450
+
+2) In-process storage space constraint:
+
+each of the plant has their respective storage limitations and the size storage requirement is below which is:
+
+Large size = 20 sq.ft for 1 unit = 20x
+Medium size = 15 sq.ft for 1 unit = 15y
+Small size = 12 sq.ft for 1 unit = 12z
+
+Its storage constraints are:
+
+Plant 1 has a space of 13,000 sq.ft = 20x+15y+12z ≤ 13,000
+Plant 2 has a space of 12,000 sq.ft = 20x+15y+12z ≤ 12,000
+Plant 3 has a space of 5,000 sq.ft = 20x+15y+12z ≤ 5,000
+
+3) Sales constraints: 
+
+According to the current forecast, new product can sell 900 units of large, 1,200 units of medium and 750 units of small sized units per day.
+
+x ≤ 900
+y ≤ 1,200
+z ≤ 750
+
+4) Excess capacity Utilization constraint:
+
+Company might have to layoff few employees from the plants if not used for excessive capacity, therefore percentage of the excessive capacity let be P.
+
+therefore the solution for plants can be:
+
+Plant 1 : x+y+z/750 ≥ P
+Plant 2 : x+y+z/900 ≥ P
+Plant 3 : x+y+z/450 ≥ P
+
+5) Non-negativity constraints:
+
+Since the number of units produced cannot be negative:
+x≥0, y≥0 & z≥0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
